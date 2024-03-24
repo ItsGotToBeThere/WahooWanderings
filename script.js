@@ -1,11 +1,11 @@
 
-const username = JSON.parse(localStorage.getItem('username'))
-const isLoggedIn = JSON.parse(localStorage.getItem('isLoggedIn'));
-const placesVisited = JSON.parse(localStorage.getItem('placesVisited'));
+// const username = JSON.parse(localStorage.getItem('username'))
+// const isLoggedIn = JSON.parse(localStorage.getItem('isLoggedIn'));
+// const placesVisited = JSON.parse(localStorage.getItem('placesVisited'));
 
-if (!isLoggedIn){
-    window.location.href = "https://wahoowanderings-signin.netlify.app"
-}
+// if (!isLoggedIn){
+//     window.location.href = "https://wahoowanderings-signin.netlify.app"
+// }
 
 
 var numPlaces = 0;
