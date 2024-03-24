@@ -199,25 +199,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     
-    let url;
+    //let url;
     document.addEventListener('click',function(event){
         if (event.target.classList.contains("checkbox")){
             toggleCrossOut(event.target)
-            url = `http://wahoo.us-east-1.elasticbeanstalk.com/user/${username}/visited/${getPlaceName(event.target.id)}/`
+            //url = `http://wahoo.us-east-1.elasticbeanstalk.com/user/${username}/visited/${getPlaceName(event.target.id)}/`
             if (!event.target.checked){
                 allLayers[parseInt(event.target.id.substring(3))-1].addTo(map)
-                url+='false'
+                //url+='false'
             }
             else{
                 map.removeLayer(allLayers[parseInt(event.target.id.substring(3))-1])
-                url+='true'
+                //url+='true'
             }
         }
-        const newTab = window.open(url,'_blank')
+        // const newTab = window.open(url,'_blank')
 
-        setTimeout(() => {
-            newTab.close();
-        }, 100);
+        // setTimeout(() => {
+        //     newTab.close();
+        // }, 100);
     })
 
 });
