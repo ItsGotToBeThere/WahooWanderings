@@ -4,7 +4,7 @@ const isLoggedIn = JSON.parse(localStorage.getItem('isLoggedIn'));
 const placesVisited = JSON.parse(localStorage.getItem('placesVisited'));
 
 if (!isLoggedIn){
-    window.location.href = "https://signin.wahoowanderings.co"
+    window.location.href = "https://wahoowanderings-signin.netlify.app"
 }
 
 
