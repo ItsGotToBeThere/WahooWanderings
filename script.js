@@ -1,10 +1,10 @@
-// const username = JSON.parse(localStorage.getItem('username'))
-// const isLoggedIn = JSON.parse(localStorage.getItem('isLoggedIn'));
-// const placesVisited = JSON.parse(localStorage.getItem('placesVisited'));
+const username = JSON.parse(localStorage.getItem('username'))
+const isLoggedIn = JSON.parse(localStorage.getItem('isLoggedIn'));
+const placesVisited = JSON.parse(localStorage.getItem('placesVisited'));
 
-// if (!isLoggedIn){
-//     window.location.href = "https://signin.wahoowanderings.co"
-// }
+if (!isLoggedIn){
+    window.location.href = "https://signin.wahoowanderings.co"
+}
 
 
 var numPlaces = 0;
@@ -170,11 +170,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 url+='true'
             }
         }
-        const newTab = window.open(url,'_blank')
-
-        setTimeout(() => {
-            newTab.close();
-        }, 100);
+        
+        fetch(url, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            console.log('Data successfully written to the database!');
+          })
+          .catch(error => {
+            console.error('There was a problem with your fetch operation:', error);
+          });
     })
 
 });
